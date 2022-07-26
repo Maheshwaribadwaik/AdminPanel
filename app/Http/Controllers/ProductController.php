@@ -35,7 +35,7 @@ if($request->hasFile('image'))
     $product->image=$filename;
 }
 $product->save();
-return redirect()->route('admin.products.index')->with('message','Added Succesfully');;
+return redirect()->route('products.index')->with('message','Added Succesfully');;
 
 }
 
@@ -68,13 +68,13 @@ if($request->hasFile('image'))
     $product->image=$filename;
 }
 $product->save();
-return redirect()->route('admin.products.index')->with('message','Update Succesfully');
+return redirect()->route('products.index')->with('message','Update Succesfully');
 
 }
 public function delete($id){
     $product= Product::find($id);
     $product->delete();
-   return redirect()->route('admin.products.index')->with('message','Delete Succesfully');
+   return redirect()->route('products.index')->with('message','Delete Succesfully');
 
 
 }

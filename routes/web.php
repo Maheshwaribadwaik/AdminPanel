@@ -17,10 +17,7 @@ use App\Http\Controllers\UserController;
 
 
 
-Route::get('/',
-
-
- function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -29,6 +26,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
 
 Route::view('/master', 'layout.master');
 Route::view('/sidebar', 'layout.sidebar');
@@ -57,4 +58,4 @@ Route::get('/orders/details/{id}',[OrderController::class,'show'])->name('orders
 Route::get('/users/index', [UserController::class,'index'])->name('users.index');
 Route::get('/users/details/{id}', [UserController::class,'show'])->name('users.details');
 
-
+});
