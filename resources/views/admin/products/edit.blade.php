@@ -10,6 +10,15 @@ Add products
                 <div class="header">
                     <h4 class="title">Add Product</h4>
                 </div>
+                @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="content">
                     <form action="{{route('products.update',$product->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf

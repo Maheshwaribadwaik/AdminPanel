@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\front\LoginController;
+use App\Http\Controllers\front\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
@@ -17,9 +21,9 @@ use App\Http\Controllers\UserController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -57,5 +61,29 @@ Route::get('/orders/details/{id}',[OrderController::class,'show'])->name('orders
 // user
 Route::get('/users/index', [UserController::class,'index'])->name('users.index');
 Route::get('/users/details/{id}', [UserController::class,'show'])->name('users.details');
+Route::get('/admin/profile', [UserController::class,'profile'])->name('admin.profile');
+Route::post('/admin/profile/store', [UserController::class,'profile_store'])->name('admin.profile.store');
+
 
 });
+// Route::get('/', [FrontController::class,'index'])->name('front.index');
+
+
+Route::get('/', [FrontController::class,'index']);
+Route::get('/user/register', [FrontController::class,'register'])->name('user.register');
+Route::post('/user/register/store', [FrontController::class,'store'])->name('register.store');
+
+
+Route::get('/user/login', [LoginController::class,'login'])->name('user.login');
+Route::post('/user/login/store', [LoginController::class,'store'])->name('login.store');
+Route::get('/user/logout', [LoginController::class,'logout'])->name('user.logout');
+
+
+// userprofile
+Route::get('/profile', [UserProfileController::class,'profile'])->name('profile.index');
+Route::get('/profile.details', [UserProfileController::class,'show'])->name('front.profile.details');
+
+
+// cart
+Route::get('/front/cart', [CartController::class,'index'])->name('cart.index');
+Route::post('/front/cart/store', [CartController::class,'cart_store'])->name('cart.store');

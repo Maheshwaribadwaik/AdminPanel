@@ -107,7 +107,7 @@ Order Details
 {{-- </div>
 <div class="container"> --}}
 
-    <div class="col-md-6">
+   <div class="col-md-6">
 
         <div class="card">
             <div class="header">
@@ -138,20 +138,6 @@ Order Details
                             <td>{{@$order->created_at}}</td>
                         </tr>
 
-                        {{-- <tr>
-                            <th>Created At</th>
-                            <td>12 days ago</td>
-                        </tr>
-
-                        <tr>
-                            <th>Updated At</th>
-                            <td>5 days ago</td>
-                        </tr>
-
-                        <tr>
-                            <th>Image</th>
-                            <td><img src="assets/img/favicon.png" alt="" class="img-thumbnail" style="width: 150px;"></td>
-                        </tr>--}}
 
                     </tbody>
 

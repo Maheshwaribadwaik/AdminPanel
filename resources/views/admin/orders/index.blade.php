@@ -63,13 +63,16 @@ order Product
                                 <a href="{{route('orders.pending',$order->id)}}">
                                     <button class="btn btn-danger" type="button"
                                         >Pending</button></a>
-                                        @else
+                             @else
 
-                                        <a href="{{route('orders.confirm',$order->id)}}">
-                                             <button class="btn btn-success" type="button">confirm</button></a>
-                                        @endif
-                                        <a href="{{route('orders.details',$order->id)}}">
-                                            <button class="btn btn-success" type="button">Details</button></a>
+                                <a href="{{route('orders.confirm',$order->id)}}">
+                                    <button class="btn btn-success" type="button">confirm</button></a>
+                             @endif
+
+
+
+                                <a href="{{route('orders.details',$order->id)}}">
+                                    <button class="btn btn-success" type="button">Details</button></a>
                             </td>
                         </tr>
                         @endforeach
