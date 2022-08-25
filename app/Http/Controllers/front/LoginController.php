@@ -28,7 +28,7 @@ class LoginController extends Controller
     }
     public function logout(){
         auth()->logout();
-        redirect()->route('user.login')->with('msg','you have logged out successfully');
+       return redirect()->route('front.index')->with('msg','you have logged out successfully');
     }
 
     // public function profile(){

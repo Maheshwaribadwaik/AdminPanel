@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('users.index')}}">
+                <a href="{{route('user.index')}}">
                     <i class="fa fa-users"></i>
                     <p>Users</p>
                 </a>

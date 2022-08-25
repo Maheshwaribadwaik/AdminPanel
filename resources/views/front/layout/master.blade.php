@@ -60,7 +60,7 @@
         <p class="display-4">&nbsp;</p>
         <a href="#" class="btn btn-warning btn-lg float-right">SHOP NOW!</a>
     </header> --}}
-    <div class="content">
+    
         @yield('content')
 
     <!-- Page Features -->

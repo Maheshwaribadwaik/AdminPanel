@@ -1,5 +1,14 @@
 @extends('front.layout.master')
 @section('content')
+<br>
+        @if (session()->has('msg'))
+        <div class="alert alert-success">{{session()->get('msg')}}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+        @endif
+
+
+
 <header class="jumbotron my-4">
     <h5 class="display-3"><strong>Welcome,</strong></h5>
     <p class="display-4"><strong>SALE UPTO 50%</strong></p>
@@ -7,9 +16,7 @@
     <a href="#" class="btn btn-warning btn-lg float-right">SHOP NOW!</a>
 </header>
 
-  @if(session()->has('message'))
-   .alert.alert-sucess{{session()->get('message')}}
-       @endif
+
 
 
  <div class="row text-center">

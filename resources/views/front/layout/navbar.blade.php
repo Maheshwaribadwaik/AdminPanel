@@ -20,8 +20,13 @@
                         <i class="fa fa-user"></i> Account
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                        @if(!auth()->check())
                         <a class="dropdown-item " href="{{route('user.login')}}">Sign In</a>
                         <a class="dropdown-item" href="{{route('user.register')}}">Sign Up</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('profile.index')}}"><i class="fa fa-user"></i>Profile</a>
+                        <a class="dropdown-item" href="{{route('user.logout')}}"><i class="fa fa-user"></i>Log Out</a>
+                        @endif
                     </div>
                 </li>
             </ul>

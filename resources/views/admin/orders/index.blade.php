@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 @section('page')
-order Product
+Order Product
 @endsection
 @section('content')
 <div class="container-fluid">

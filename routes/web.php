@@ -59,7 +59,7 @@ Route::get('/orders/details/{id}',[OrderController::class,'show'])->name('orders
 
 
 // user
-Route::get('/users/index', [UserController::class,'index'])->name('users.index');
+Route::get('/users/index', [UserController::class,'index'])->name('user.index');
 Route::get('/users/details/{id}', [UserController::class,'show'])->name('users.details');
 Route::get('/admin/profile', [UserController::class,'profile'])->name('admin.profile');
 Route::post('/admin/profile/store', [UserController::class,'profile_store'])->name('admin.profile.store');
@@ -69,7 +69,7 @@ Route::post('/admin/profile/store', [UserController::class,'profile_store'])->na
 // Route::get('/', [FrontController::class,'index'])->name('front.index');
 
 
-Route::get('/', [FrontController::class,'index']);
+Route::get('/', [FrontController::class,'index'])->name('front.index');
 Route::get('/user/register', [FrontController::class,'register'])->name('user.register');
 Route::post('/user/register/store', [FrontController::class,'store'])->name('register.store');
 
@@ -81,7 +81,10 @@ Route::get('/user/logout', [LoginController::class,'logout'])->name('user.logout
 
 // userprofile
 Route::get('/profile', [UserProfileController::class,'profile'])->name('profile.index');
-Route::get('/profile.details', [UserProfileController::class,'show'])->name('front.profile.details');
+Route::get('/user/details/{id}', [UserProfileController::class,'show'])->name('front.profile.details');
+Route::get('/user/profile/edit/{id}', [UserProfileController::class,'edit'])->name('profile.edit');
+Route::post('/user/profile/update/{id}', [UserProfileController::class,'update'])->name('profile.update');
+
 
 
 // cart

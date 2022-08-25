@@ -108,7 +108,7 @@ Dashboard
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <a href="{{route('users.index')}}">  <i class="ti-panel"></i> Details</a>
+                                        <a href="{{route('user.index')}}">  <i class="ti-panel"></i> Details</a>
                                     </div>
                                 </div>
                             </div>
