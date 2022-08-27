@@ -81,7 +81,8 @@ Route::get('/user/logout', [LoginController::class,'logout'])->name('user.logout
 
 // userprofile
 Route::get('/profile', [UserProfileController::class,'profile'])->name('profile.index');
-Route::get('/user/details/{id}', [UserProfileController::class,'show'])->name('front.profile.details');
+// Route::get('/user/details/{id}', [UserProfileController::class,'show'])->name('profile.details');
+Route::get('/user/order/{id}',[UserProfileController::class,'show'])->name('user.show');
 Route::get('/user/profile/edit/{id}', [UserProfileController::class,'edit'])->name('profile.edit');
 Route::post('/user/profile/update/{id}', [UserProfileController::class,'update'])->name('profile.update');
 

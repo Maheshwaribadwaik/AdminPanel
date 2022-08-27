@@ -1,5 +1,10 @@
 @extends('front.layout.master')
 @section('content')
+        @if (session()->has('msg'))
+    <div class="alert alert-success">{{session()->get('msg')}}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    @endif
 <div class="container">
 
     <div class="row">
@@ -10,12 +15,15 @@
                 <div class="card-body">
                     <h2 class="card-title">Profile Edit</h2>
                     <hr>
-                    @if (session()->has('msg'))
-        <div class="alert alert-success">{{session()->get('msg')}}
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div>
-        @endif
-                @endif
+                    {{-- @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif --}}
                     <form action="{{route('profile.update',$user->id)}}" method="POST">
                         @csrf
 

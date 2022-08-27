@@ -17,9 +17,14 @@ class UserProfileController extends Controller
 
 
 }
-public function show($id){
+// public function show($id){
+//     $order = Order::find($id);
+//     return view('front.profile.details',compact('order'));
+// }
+public function show($id)
+{
     $order = Order::find($id);
-    return view('front.profile.details',compact('order'));
+   return view('front.profile.details',compact('order'));
 }
 public function edit($id){
     $user = User::find($id);
